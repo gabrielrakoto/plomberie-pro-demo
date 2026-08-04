@@ -1,0 +1,22 @@
+:root{
+--font-display:"Poppins",system-ui,sans-serif;--font-body:"DM Sans",system-ui,sans-serif;
+--fw-regular:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-semibold:600; /* @kind font */
+--fw-bold:700; /* @kind font */
+/* Display / headings — Poppins */
+--type-display-size:56px;--type-display-lh:1.14;--type-display-weight:var(--fw-semibold);--type-display-ls:-0.02em;
+--type-h1-size:44px;--type-h1-lh:1.16;--type-h1-weight:var(--fw-semibold);--type-h1-ls:-0.02em;
+--type-h2-size:34px;--type-h2-lh:1.22;--type-h2-weight:var(--fw-semibold);--type-h2-ls:-0.015em;
+--type-h3-size:22px;--type-h3-lh:1.3;--type-h3-weight:var(--fw-semibold);--type-h3-ls:-0.01em;
+--type-stat-size:46px;--type-stat-lh:1;--type-stat-weight:var(--fw-bold);--type-stat-ls:-0.02em;
+/* Body — DM Sans */
+--type-body-lg-size:17px;--type-body-lg-lh:1.65;
+--type-body-size:15px;--type-body-lh:1.7;
+--type-body-sm-size:13px;--type-body-sm-lh:1.6;
+--type-caption-size:12px;--type-caption-lh:1.5;
+/* Eyebrow — uppercase orange label */
+--type-eyebrow-size:12px;--type-eyebrow-lh:1.2;--type-eyebrow-weight:var(--fw-bold);--type-eyebrow-ls:0.1em;
+--type-nav-size:14px;--type-nav-weight:var(--fw-medium);
+--type-button-size:14px;--type-button-weight:var(--fw-medium);
+}

@@ -1,0 +1,20 @@
+:root{
+/* Brand — orange */
+--orange-50:#FEF2EA;--orange-100:#FCE0CF;--orange-200:#F9C1A2;--orange-400:#F78B4C;--orange-500:#F26A22;--orange-600:#DC5814;--orange-700:#B54510;
+/* Brand — navy */
+--navy-50:#EEF2F5;--navy-100:#D5DEE5;--navy-300:#8199AA;--navy-600:#2A4A5E;--navy-800:#152F45;--navy-900:#102A3A;
+/* Neutrals */
+--white:#FFFFFF;--slate-50:#F7F8FA;--slate-100:#F1F1F9;--slate-200:#E6E8EE;--slate-300:#CBD2D8;--slate-500:#5C6B76;--slate-700:#33454F;
+/* Semantic */
+--green-500:#1F9D63;--red-500:#D93B3B;--amber-500:#E9A21B;
+
+/* ——— Semantic aliases ——— */
+--text-heading:var(--navy-900);--text-body:var(--slate-500);--text-muted:var(--navy-300);--text-inverse:var(--white);--text-accent:var(--orange-500);--text-link:var(--orange-600);
+--surface-page:var(--white);--surface-card:var(--white);--surface-subtle:var(--slate-100);--surface-inverse:var(--navy-800);--surface-accent:var(--orange-500);--surface-accent-subtle:var(--orange-50);
+--border-default:var(--slate-200);--border-strong:var(--slate-300);--border-inverse:rgba(255,255,255,.28);
+--action-primary-bg:var(--orange-500);--action-primary-bg-hover:var(--orange-600);--action-primary-bg-active:var(--orange-700);--action-primary-fg:var(--white);
+--action-secondary-fg:var(--white);--action-secondary-border:rgba(255,255,255,.55);
+--focus-ring:var(--orange-400);
+/* Glass overlay used over hero photography */
+--overlay-glass:rgba(255,255,255,.16);--overlay-scrim:linear-gradient(90deg,rgba(9,24,34,.88) 0%,rgba(9,24,34,.55) 46%,rgba(9,24,34,0) 78%); /* @kind color */
+}
