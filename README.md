@@ -32,10 +32,10 @@ One shared block, `position: relative; overflow: hidden; background: var(--navy-
 - A full-bleed photo, `position: absolute; inset: 0; width/height 100%; object-fit: cover`. One per page:
   | Page | Image | object-position |
   | --- | --- | --- |
-  | Accueil | `assets/plombier-salle-de-bain.jpg` | 78% 45% |
-  | Services | `assets/plombier-cuisine-reparation.jpg` | 60% 30% |
-  | À propos | `assets/plombier-portrait-cuisine.jpg` | 70% 25% |
-  | Contact | `assets/plombier-client-cuisine.png` | 45% 25% |
+  | Accueil | `assets/plombier-atelier-tuyau.jpg` | 60% 45% |
+  | Services | `assets/plombier-chauffe-eau.jpg` | 50% 40% |
+  | À propos | `assets/plombier-perceuse.jpg` | 40% 35% |
+  | Contact | `assets/plombier-reparation-pompe.jpg` | 50% 35% |
 - A scrim over it: `position: absolute; inset: 0; background: var(--overlay-scrim)` = `linear-gradient(90deg, rgba(9,24,34,.88) 0%, rgba(9,24,34,.55) 46%, rgba(9,24,34,0) 78%)`. Left-to-right, never a flat overlay.
 - Home content: container `padding: 72px 40px 56px`; a 600px column with eyebrow "Votre plombier de confiance au Québec", display-size H1 (`Une fuite ? Un drain bloqué ?` / `On intervient aujourd'hui.`), lede, then two large buttons (primary "Appeler maintenant" with phone icon; secondary/outline "Demander une soumission"). Below, 56px down, a glass Badge ("Réponse en moins de 60 minutes") and a glass Card (min-width 430px) reading "Licencié, assuré et garanti — sans mauvaise surprise" over five 46px white pill icon chips (shield-check, badge-check, award, wrench, clock).
 - Inner pages: container `padding: 96px 40px 88px; min-height: 430px; display: flex; align-items: flex-end`, a 640px column with eyebrow + H1 + lede per page. The min-height matters — with less, the photo reads as a cropped sliver behind the header.
@@ -102,8 +102,8 @@ All tokens are in `_ds/fixflow-design-system-.../tokens/`. Link `styles.css` or 
 
 ## Assets
 - `assets/logo-plomberie-pro.png` — client-supplied logo mark (used at 44px in header and footer). No vector supplied; request an SVG.
-- `assets/plombier-salle-de-bain.jpg`, `plombier-cuisine-reparation.jpg`, `plombier-portrait-cuisine.jpg`, `plombier-client-cuisine.png` — page banner photography.
-- `assets/equipe-plomberie-toutan.jpg` — team photo, "L'équipe au travail".
+- `assets/plombier-atelier-tuyau.jpg` (Accueil), `plombier-chauffe-eau.jpg` (Services), `plombier-perceuse.jpg` (À propos), `plombier-reparation-pompe.jpg` (Contact) — real page banner photography (Pexels, portrait 2268×4032, cropped with `object-position`).
+- `assets/equipe-plomberie-toutan.jpg` — team photo, "L'équipe au travail" (AI-generated, kept on purpose). `assets/service-*.jpg|avif` — Services page card photos: `service-debouchage.avif` and `service-chauffe-eau.avif` are the client-supplied real photos; the other six come from Pexels (free license): salle-de-bain 358592, commercial 4947388, inspection 16509869, urgence 15206136, residentiel 32588548, fuite 36571568.
 - `assets/hero-plumber-kitchen.png`, `team-two-workers.png` — low-resolution crops that ship with the FixFlow design system, reference only; not used in the final pages.
 - Icons: Lucide, delivered by the design system's `Icon` component (masks `unpkg.com/lucide-static@0.544.0/icons/<name>.svg` with `background-color: currentColor`). Swap for a local Lucide package in production. No emoji anywhere.
 - Fonts: Poppins + DM Sans from Google Fonts via `tokens/fonts.css`. Self-host in production.
@@ -118,3 +118,35 @@ Phone number (currently `(514) 555-0123`), email (`info@plomberiepro.ca`), stree
 - `assets/` — images listed above.
 
 Open `Plomberie Pro.dc.html` in a browser to see the prototype as built.
+
+## Accueil v2 — refonte inspirée de Plumber 128 (2026-10-11)
+Layout repris de https://plumber-128.webflow.io/ (référence visuelle seulement, aucune section ajoutée), couleurs Plomberie Pro conservées (leur bleu-vert → `--navy-800`, leur jaune → `--orange-500`). Les styles vivent dans le `<style>` de la page sous le préfixe `.hp-*`; seule la page Accueil les utilise.
+- **Typographie (tout le site)** : titres en Space Grotesk (`--font-display` redéfini dans la page), texte courant en DM Sans.
+- **Hero** : fond clair `--slate-100`, H1 Space Grotesk 700, bouton orange rectangulaire (rayon 10px) + lien souligné, chiffres clés (15+, RBQ, 2 M$, 24/7) intégrés sous les CTA. À droite : photo en arche sur grand cercle marine, anneau orange, 2 cartes flottantes. La bannière photo plein écran ne s'affiche plus que sur les pages intérieures.
+- **Réservation rapide** : carte blanche qui chevauche le bas du hero.
+- **Qui nous sommes** : collage de 2 photos décalées + bloc marine + pastille orange (clé), texte/onglets/checklist à droite.
+- **Services** : cartes avec bandeau marine + icône, carte blanche superposée (étiquette, titre, texte, lien souligné). Urgence en bandeau orange.
+- **Zone desservie** : texte à gauche, grille de villes en cartes bordées à droite.
+- **Témoignages** : un avis à la fois en grand (flèches précédent/suivant), nuage d'initiales décoratif à gauche.
+- **Urgence** : grand encadré marine arrondi, centré, numéro en très grand.
+- **Soumission** : 2 colonnes, formulaire dans une carte blanche ombrée.
+- **Animations** (CSS `@keyframes hp-*` + petit script `IntersectionObserver` dans la page) : entrée en cascade du hero, compteurs animés (15, 2, 24 via `@property --hp-n`; le vrai texte est dans `aria-label`), cartes flottantes et anneau qui flottent, apparitions au défilement (`.hp-reveal`, variantes `.hp-from-left/right`, `.hp-zoom`, délai `--i`), collage révélé en volet, reflet sur les boutons, soulignement animé des liens, icônes de services qui pivotent au survol. Tout est coupé avec `prefers-reduced-motion: reduce`, et le contenu reste visible si le JS ne charge pas (classe `hp-anim` posée par le script).
+
+## Services v2 — inspirée de Plumber 128 « Our services » (2026-10-11)
+- Bannière photo conservée en haut. Titre centré « Comment pouvons-nous vous aider ? ».
+- Grille de 8 cartes `.sv-card` (3 colonnes, dernière rangée centrée; 2 colonnes ≤1024px, 1 ≤640px) : photo arrondie 300px, pastille ronde orange avec l'icône Lucide qui chevauche le coin bas-droit (rouge pour Urgence), étiquette orange, titre, texte, lien souligné « Demander une soumission » (Urgence → « Appeler maintenant »).
+- Photos : `assets/service-*.jpg|avif` (voir Assets).
+- Bloc final orange arrondi « Pas certain du service nécessaire ? » avec bouton blanc (appel) et bouton contour (message).
+- Animations : photo qui se dévoile de bas en haut avec dézoom, pastille qui surgit en tournant, texte qui monte, en cascade par colonne (`--i`). Survol : zoom photo, voile marine, pastille qui pivote et devient marine, soulignement qui se retire. Même script `IntersectionObserver` que l'accueil; coupé avec `prefers-reduced-motion`.
+- **Bannière des pages intérieures** (Services, À propos, Contact, Confidentialité) : entrée animée (`.pb-banner.pb-play`) — photo qui dézoome en s'éclaircissant, voile qui glisse, trait orange `.pb-accent` qui se dessine, surtitre qui se resserre, titre qui sort d'un masque, texte qui monte. Rejouée à chaque changement de page via `componentDidUpdate`. Coupée avec `prefers-reduced-motion`.
+
+## À propos v2 — inspirée de Plumber 128 « About us 2 » (2026-10-11)
+Mêmes 4 sections et mêmes textes, nouvelle mise en page (`.ab-*`) :
+- **Notre histoire** : fond gris, photo arrondie (`plombier-reparation-pompe.jpg`) avec bloc marine décalé et anneau orange, texte à droite. Animation : photo révélée en volet, bloc qui glisse, anneau qui surgit puis flotte.
+- **Nos valeurs** : titre centré + 3 atouts en grille (icône orange à gauche du titre, texte dessous). Icônes qui surgissent en cascade; au survol la tuile d'icône devient orange et pivote.
+- **Licences et garanties** : moitié photo pleine hauteur (`plombier-atelier-tuyau.jpg`) + moitié marine avec les 4 éléments en liste et une barre orange décorative sous chacun (pas de pourcentage inventé). Barres qui se remplissent en cascade, photo qui dézoome.
+- **L'équipe au travail** : titre centré + grande photo arrondie qui se déploie depuis un cadre réduit.
+- `main { overflow-x: clip; }` évite le débordement horizontal des éléments qui glissent depuis les côtés.
+
+## Contact — animations de texte (2026-10-11)
+Mise en page inchangée. Chaque bloc (`.ct-card`) apparaît au défilement; à l'intérieur, le titre (`.ct-title`) monte et un trait orange se dessine dessous, puis les lignes des coordonnées et des heures (`.ct-lines > *`) et les champs du formulaire (`.ct-form > *`) sortent d'un léger flou en cascade. Un reflet orange traverse le numéro de téléphone (`.ct-phone`). Coupé avec `prefers-reduced-motion`.
