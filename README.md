@@ -102,6 +102,7 @@ All tokens are in `_ds/fixflow-design-system-.../tokens/`. Link `styles.css` or 
 
 ## Assets
 - `assets/logo-plomberie-pro.png` — client-supplied logo mark (used at 44px in header and footer). No vector supplied; request an SVG.
+- `assets/favicon-64.png` (onglet du navigateur) et `assets/apple-touch-icon.png` (180px, écran d'accueil iOS) — versions réduites du logo, déclarées dans le `<head>`.
 - `assets/plombier-atelier-tuyau.jpg` (Accueil), `plombier-chauffe-eau.jpg` (Services), `plombier-perceuse.jpg` (À propos), `plombier-reparation-pompe.jpg` (Contact) — real page banner photography (Pexels, portrait 2268×4032, cropped with `object-position`).
 - `assets/equipe-plomberie-toutan.jpg` — team photo, "L'équipe au travail" (AI-generated, kept on purpose). `assets/service-*.jpg|avif` — Services page card photos: `service-debouchage.avif` and `service-chauffe-eau.avif` are the client-supplied real photos; the other six come from Pexels (free license): salle-de-bain 358592, commercial 4947388, inspection 16509869, urgence 15206136, residentiel 32588548, fuite 36571568.
 - `assets/hero-plumber-kitchen.png`, `team-two-workers.png` — low-resolution crops that ship with the FixFlow design system, reference only; not used in the final pages.
