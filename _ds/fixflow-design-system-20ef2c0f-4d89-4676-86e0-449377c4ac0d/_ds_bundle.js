@@ -11,7 +11,7 @@ const __ds_scope = {};
 // components/brand/Icon.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const CDN = "https://unpkg.com/lucide-static@0.544.0/icons/";
+const CDN = "_ds/fixflow-design-system-20ef2c0f-4d89-4676-86e0-449377c4ac0d/icons/";
 
 /* Lucide (CDN) stands in for FixFlow's icon set — see readme.md > Iconography. */
 function Icon({

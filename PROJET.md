@@ -14,6 +14,7 @@ remet l'ancienne photo ia de l'équipe au travaille
 - 2026-10-11 : page Services refaite façon plumber-128 « Our services » : cartes photo avec pastille d'icône, CTA orange, animations. 6 photos Pexels (licence gratuite) + 2 vraies photos AVIF du client.
 - 2026-10-11 : page À propos refaite façon plumber-128 « About us 2 » (mêmes sections et textes, nouvelle mise en page + animations).
 - 2026-10-11 : animations de texte sur la page Contact (titres, lignes en cascade, reflet sur le téléphone). Tout commité et poussé sur gabrielrakoto/plomberie-pro-demo (master).
+- **2026-10-11 — Vie privée (Loi 25)** : site fictif assumé (mention dans le footer), formulaire(s) en mode démo (rien n'est envoyé ni enregistré, c'est indiqué à l'écran), aucun service tiers chargé sans action de l'utilisateur : polices auto-hébergées, carte OpenStreetMap chargée seulement au clic sur « Afficher la carte ». La politique de confidentialité décrit exactement ça. React/Babel (`vendor/`) et icônes Lucide (`_ds/.../icons/`) hébergés localement au lieu d'unpkg.
 
 ## Stack choisie
 

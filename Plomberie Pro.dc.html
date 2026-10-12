@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="_ds/fixflow-design-system-20ef2c0f-4d89-4676-86e0-449377c4ac0d/tokens/motion.css" />
 <link rel="stylesheet" href="_ds/fixflow-design-system-20ef2c0f-4d89-4676-86e0-449377c4ac0d/styles.css" />
 <script src="_ds/fixflow-design-system-20ef2c0f-4d89-4676-86e0-449377c4ac0d/_ds_bundle.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
 <style>
   :root { --font-display: "Space Grotesk", system-ui, sans-serif; }
   * { box-sizing: border-box; }
@@ -603,12 +602,12 @@
                   <button type="submit" class="hp-btn" style="height:48px;font-size:16px;padding:0 24px">Envoyer</button>
                   <label style="display:flex;align-items:flex-start;gap:8px;font-size:var(--type-caption-size);line-height:1.5;color:var(--text-body)">
                     <input type="checkbox" required style="margin-top:3px;flex:none;width:15px;height:15px;accent-color:var(--orange-500)" />
-                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>.</span>
+                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>. Formulaire de démonstration (site fictif) : rien n'est envoyé ni enregistré.</span>
                   </label>
                 </form>
               </sc-if>
               <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-                <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Badge" tone="success" icon="circle-check" hint-size="auto,30px">Demande reçue — on vous rappelle dans les minutes qui suivent.</x-import>
+                <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Badge" tone="success" icon="circle-check" hint-size="auto,30px">Démonstration : aucune demande n'a été envoyée.</x-import>
               </sc-if>
             </div>
           </div>
@@ -772,7 +771,7 @@
                   <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Textarea" placeholder="Ex. : l'eau remonte dans la douche depuis hier soir." rows="4" hint-size="100%,110px"></x-import>
                   <label style="display:flex;align-items:flex-start;gap:8px;font-size:var(--type-caption-size);line-height:1.5;color:var(--text-body)">
                     <input type="checkbox" required style="margin-top:3px;flex:none;width:15px;height:15px;accent-color:var(--orange-500)" />
-                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>.</span>
+                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>. Formulaire de démonstration (site fictif) : rien n'est envoyé ni enregistré.</span>
                   </label>
                   <button type="submit" class="hp-btn" style="width:100%">Envoyer ma demande</button>
                   <span style="font-size:var(--type-caption-size);color:var(--text-muted);text-align:center">Vos coordonnées restent confidentielles.</span>
@@ -781,7 +780,7 @@
               <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:24px 0">
                   <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Badge" tone="success" icon="circle-check" hint-size="auto,30px">Demande reçue</x-import>
-                  <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">On vous rappelle dans les prochaines heures. Pour une urgence, appelez le <a href="{{ telHref }}">{{ phone }}</a>.</p>
+                  <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Ceci est un site de démonstration : votre demande n'a été ni envoyée ni enregistrée.</p>
                 </div>
               </sc-if>
             </div>
@@ -1034,7 +1033,7 @@
                   </label>
                   <label style="display:flex;align-items:flex-start;gap:8px;font-size:var(--type-caption-size);line-height:1.5;color:var(--text-body)">
                     <input type="checkbox" required style="margin-top:3px;flex:none;width:15px;height:15px;accent-color:var(--orange-500)" />
-                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter au sujet de ma demande. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>.</span>
+                    <span>J'accepte que mes renseignements soient utilisés pour me recontacter au sujet de ma demande. <a href="#" onClick="{{ goPrivacy }}">Politique de confidentialité</a>. Formulaire de démonstration (site fictif) : rien n'est envoyé ni enregistré.</span>
                   </label>
                   <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Button" variant="primary" size="lg" type="submit" hint-size="100%,52px">Envoyer ma demande</x-import>
                   <span style="font-size:var(--type-caption-size);color:var(--text-muted);text-align:center">Formulaire à connecter à un webhook n8n ou à un service d'envoi de courriel.</span>
@@ -1043,7 +1042,7 @@
               <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:24px 0">
                   <x-import component-from-global-scope="FixFlowDesignSystem_20ef2c.Badge" tone="success" icon="circle-check" hint-size="auto,30px">Demande reçue</x-import>
-                  <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">On vous rappelle dans les prochaines heures. Pour une urgence, appelez le <a href="{{ telHref }}">{{ phone }}</a>.</p>
+                  <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Ceci est un site de démonstration : votre demande n'a été ni envoyée ni enregistrée.</p>
                 </div>
               </sc-if>
             </x-import>
@@ -1087,8 +1086,16 @@
               </div>
 
               <div class="ct-card hp-reveal hp-zoom" style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-default);background:var(--white)">
-                <iframe title="Carte de la zone desservie — Québec" src="https://www.openstreetmap.org/export/embed.html?bbox=-71.45%2C46.71%2C-71.14%2C46.90&amp;layer=mapnik" style="width:100%;height:280px;border:0;display:block" loading="lazy"></iframe>
-                <div style="padding:14px 18px;font-size:var(--type-caption-size);color:var(--text-muted)">Remplacer par l'intégration Google Maps de la fiche d'entreprise réelle.</div>
+                <sc-if value="{{ showMap }}" hint-placeholder-val="{{ false }}">
+                  <iframe title="Carte de la zone desservie — Québec" src="{{ mapSrc }}" style="width:100%;height:280px;border:0;display:block" referrerPolicy="no-referrer"></iframe>
+                </sc-if>
+                <sc-if value="{{ hideMap }}" hint-placeholder-val="{{ true }}">
+                  <div style="height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;background:var(--slate-50, #f6f8fb)">
+                    <p style="margin:0;max-width:36ch;font-size:var(--type-caption-size);line-height:1.6;color:var(--text-muted)">La carte est fournie par OpenStreetMap, un service tiers. Elle ne se charge que si vous cliquez ci-dessous.</p>
+                    <button type="button" class="hp-btn" onClick="{{ onShowMap }}">Afficher la carte</button>
+                  </div>
+                </sc-if>
+                <div style="padding:14px 18px;font-size:var(--type-caption-size);color:var(--text-muted)">Zone desservie : grande région de Québec.</div>
               </div>
             </div>
           </div>
@@ -1102,12 +1109,13 @@
           <div style="max-width:1120px;margin:0 auto;padding:0 40px">
             <div style="max-width:780px;display:flex;flex-direction:column;gap:34px">
 
+              <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)"><strong>Avis — site fictif.</strong> Plomberie Pro est une entreprise fictive ; ce site a été réalisé à des fins de démonstration pour un portfolio. Les formulaires sont des démonstrations : les renseignements saisis (y compris une photo jointe) ne sont <strong>ni envoyés, ni enregistrés, ni conservés</strong>. La présente politique illustre celle qu'appliquerait l'entreprise si elle était réelle.</p>
               <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Plomberie Pro (« nous », « notre ») s'engage à protéger les renseignements personnels de sa clientèle et des visiteurs de son site web, conformément à la <em>Loi sur la protection des renseignements personnels dans le secteur privé</em> (Loi 25) du Québec. La présente politique explique quels renseignements nous recueillons, pourquoi, comment ils sont protégés et quels sont vos droits.</p>
 
               <div>
                 <div style="font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:var(--type-h3-size);color:var(--navy-900);margin-bottom:12px">1. Renseignements personnels recueillis</div>
                 <p style="margin:0 0 12px;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Lorsque vous remplissez un formulaire de contact ou de demande de soumission sur ce site, nous pouvons recueillir : votre nom, votre numéro de téléphone, votre adresse courriel, le contenu de votre message ou la description de votre problème de plomberie, et une photo que vous choisissez de joindre (facultatif).</p>
-                <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Ce site n'utilise actuellement aucun témoin (cookie) de suivi ni aucun outil d'analyse (ex. Google Analytics, pixel publicitaire). Si un tel outil était ajouté ultérieurement, la présente politique serait mise à jour en conséquence et, le cas échéant, votre consentement vous serait demandé.</p>
+                <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Ce site n'utilise aucun témoin (cookie) ni aucun outil d'analyse (ex. Google Analytics, pixel publicitaire), et aucun service tiers n'est contacté au chargement des pages : polices, icônes et scripts sont hébergés sur le site lui-même. L'hébergeur (Vercel) traite techniquement votre adresse IP pour afficher les pages, sur des serveurs qui peuvent être situés hors du Québec. La carte de la page Contact (OpenStreetMap) ne se charge que si vous cliquez sur « Afficher la carte » ; votre adresse IP est alors transmise à la Fondation OpenStreetMap. Si un outil de suivi était ajouté, il ne serait activé qu'après votre consentement.</p>
               </div>
 
               <div>
@@ -1153,7 +1161,7 @@
               <div>
                 <div style="font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:var(--type-h3-size);color:var(--navy-900);margin-bottom:12px">9. Modifications de cette politique</div>
                 <p style="margin:0;font-size:var(--type-body-size);line-height:var(--type-body-lh);color:var(--text-body)">Cette politique peut être mise à jour à l'occasion, notamment pour refléter un changement dans nos pratiques ou dans la loi. Toute mise à jour sera publiée sur cette page.</p>
-                <p style="margin:14px 0 0;font-size:var(--type-caption-size);color:var(--text-muted)">Dernière mise à jour : 7 septembre 2026.</p>
+                <p style="margin:14px 0 0;font-size:var(--type-caption-size);color:var(--text-muted)">Dernière mise à jour : 11 octobre 2026.</p>
               </div>
 
             </div>
@@ -1203,7 +1211,7 @@
         </div>
       </div>
       <div style="margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;color:rgba(255,255,255,.5);font-size:12.5px">
-        <span>© 2026 Plomberie Pro. Tous droits réservés. · Responsable de la protection des renseignements personnels : Gabriel — <a href="mailto:gabrielrakotor40@gmail.com" style="color:rgba(255,255,255,.5)">gabrielrakotor40@gmail.com</a></span>
+        <span>© 2026 Plomberie Pro. Tous droits réservés. · Site fictif réalisé à des fins de démonstration (portfolio). · Responsable de la protection des renseignements personnels : Gabriel — <a href="mailto:gabrielrakotor40@gmail.com" style="color:rgba(255,255,255,.5)">gabrielrakotor40@gmail.com</a></span>
         <span>Fait au Québec · Service en français</span>
       </div>
     </div>
@@ -1233,7 +1241,7 @@ const REVIEWS = [
 ];
 
 class Component extends DCLogic {
-  state = { page: 'home', sent: false, tab: 'Notre mission', review: 0 };
+  state = { page: 'home', sent: false, tab: 'Notre mission', review: 0, showMap: false };
 
   go(page) {
     return (e) => {
@@ -1316,6 +1324,11 @@ class Component extends DCLogic {
       setTab: (t) => this.setState({ tab: t }),
       sent: this.state.sent,
       notSent: !this.state.sent,
+      showMap: this.state.showMap,
+      hideMap: !this.state.showMap,
+      onShowMap: () => this.setState({ showMap: true }),
+      // URL fournie par le state : le gabarit brut ne contient aucune adresse tierce.
+      mapSrc: 'https://www.openstreetmap.org/export/embed.html?bbox=-71.45%2C46.71%2C-71.14%2C46.90&layer=mapnik',
       goHome: this.go('home'),
       goServices: this.go('services'),
       goAbout: this.go('about'),
